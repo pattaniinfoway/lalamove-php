@@ -42,15 +42,16 @@ $host = 'https://sandbox-rest.lalamove.com/v2/orders';
               ),  
               "remarks" => "ORDER #: 1234, ITEM 1 x 1, ITEM 2 x 2"
             )   
-          ) , 
+          ) ,
+             "quotedTotalFee" => array(
+          "amount" => "4",
+          "currency" => "MYR"
+          )
+ 
 
-				"quotedTotalFee" => array(
-					"amount" => "10.0",
-					"currency" => "MYR"
-				  )
         );
   //print_r(json_encode($body));exit;
-  $apikey="";
+  $apikey="344436c58795461f99ec1321852a09c3";
     $time = time() * 1000;
 
 
@@ -96,8 +97,8 @@ $curl = curl_init();
  function getSignature($time,$method,$body)
   {
     //echo json_encode((object)$body;exit;
-    $secret = '';
-    $path="v2/orders";
+    $secret = 'MCwCAQACBQDPDVk7AgMBAAECBDiSbEkCAwDf1QIDAOzPAgILOQICVhkCAwDP';
+    $path="/v2/orders";
     $_encryptBody = '';
     if ($method == "GET") {
       $_encryptBody = $time."\r\n".$method."\r\n".$path."\r\n\r\n";
