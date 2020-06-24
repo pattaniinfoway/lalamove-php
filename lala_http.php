@@ -45,7 +45,7 @@ $host = 'https://sandbox-rest.lalamove.com/v2/quotations';
           )   
         );
   //print_r(json_encode($body));exit;
-  $apikey="344436c58795461f99ec1321852a09c3";
+  $apikey="";
     $time = time() * 1000;
 
 
@@ -91,7 +91,7 @@ $curl = curl_init();
  function getSignature($time,$method,$body)
   {
     //echo json_encode((object)$body;exit;
-    $secret = 'MCwCAQACBQDPDVk7AgMBAAECBDiSbEkCAwDf1QIDAOzPAgILOQICVhkCAwDP';
+    $secret = '';
     $path="/v2/quotations";
     $_encryptBody = '';
     if ($method == "GET") {
