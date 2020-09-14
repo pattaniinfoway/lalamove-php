@@ -1,10 +1,10 @@
 <?php
 
 
-$host = 'https://sandbox-rest.lalamove.com/v2/orders/'.'88054813-1152-8591-3600-240102962121';    
+//$host = 'https://sandbox-rest.lalamove.com/v2/orders/'.'90944138-0495-9211-5200-273612447021';    
 
 
-
+$host = 'https://sandbox-rest.lalamove.com/v2/orders/'.'{customerOrderId}';
    
   $apikey="344436c58795461f99ec1321852a09c3";
     $time = time() * 1000;
@@ -53,7 +53,8 @@ $curl = curl_init();
   {
     //echo json_encode((object)$body;exit;
     $secret = 'MCwCAQACBQDPDVk7AgMBAAECBDiSbEkCAwDf1QIDAOzPAgILOQICVhkCAwDP';
-    $path="/v2/orders/".'88054813-1152-8591-3600-240102962121';
+   // $path="/v2/orders/".'90944138-0495-9211-5200-273612447021';
+     $path="/v2/orders/".'{customerOrderId}';
     $_encryptBody = '';
     if ($method == "GET") {
       $_encryptBody = $time."\r\n".$method."\r\n".$path."\r\n\r\n";
